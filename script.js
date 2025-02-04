@@ -1,13 +1,30 @@
-const prompt = require("prompt-sync")({ sigint: true });
+function calcularFactorial() {
+  const numeroInput = document.getElementById("numeroInput").value.trim();
+  const errorMessage = document.getElementById("mensajeError");
+  const resultado = document.getElementById("resultado");
 
-function calcularFactorial(numero) {
+  if (numeroInput === "" || isNaN(numeroInput)) {
+    errorMessage.textContent = "Error Ingresa un número valido";
+    resultado.textContent = "";
+    return;
+  }
+
+  const numero = Number(numeroInput);
+
+  if (!Number.isInteger(numero) || numero < 0) {
+    errorMessage.textContent = "Error Ingresa un numero entero positivo";
+    resultado.textContent = "";
+    return;
+  }
+
+  errorMessage.textContent = "";
+
   let factorial = 1;
-
   for (let index = numero; index >= 1; index--) {
-    factorial = factorial * index;
-  };
-  
-  return `El factorial de: ${numero} es = ${factorial}`;
-};
+    factorial *= index;
+  }
 
-console.log(calcularFactorial(Number(prompt("Dime tu numero: "))));
+  resultado.textContent = `El factorial de ${numero} es = ${factorial}`;
+}
+
+document.getElementById("calcularBtn").addEventListener("click", calcularFactorial);

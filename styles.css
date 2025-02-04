@@ -1,0 +1,31 @@
+body {
+  background-color: #fef9e1;
+  color: #6d2323;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  justify-content: center;
+align-items: center;
+}
+
+.container {
+  background-color: #e5d0ac;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 50px;
+}
+
+.btn-primary {
+  background-color: #a31d1d;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #6d2323;
+  border: none;
+}
+
+.error-message {
+  color: #a31d1d;
+  font-weight: bold;
+}
